@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+const pages=await(await fetch('http://127.0.0.1:9222/json')).json();
+const ws=new WebSocket(pages.find(x=>x.type==='page').webSocketDebuggerUrl);await new Promise(r=>ws.onopen=r);let sequence=0;const pending=new Map();ws.onmessage=e=>{const message=JSON.parse(e.data);if(message.id){const item=pending.get(message.id);pending.delete(message.id);message.error?item.reject(Error(JSON.stringify(message.error))):item.resolve(message.result);}};
+function call(method,params={}){return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});}
+async function js(expression){const r=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.text);return r.result.value;}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function until(expression){for(let i=0;i<80;i++){if(await js(expression))return;await sleep(100);}throw Error('Timeout: '+expression);}
+await call('Page.enable');await call('Network.enable');await call('Network.setBypassServiceWorker',{bypass:true});
+await call('Network.setBlockedURLs',{urls:['*://127.0.0.1:3000/app.js']});await call('Page.navigate',{url:'http://127.0.0.1:3000/'});await until(`document.querySelector('h1')?.textContent==='ANAIA could not finish opening.'`);assert(await js(`document.querySelector('main').textContent.includes('npm start')`));console.log('PASS failed module displays actionable recovery instead of empty content');
+await call('Network.setBlockedURLs',{urls:[]});
+const injected=await call('Page.addScriptToEvaluateOnNewDocument',{source:`Object.defineProperty(window,'indexedDB',{value:{open(){return {}}}});`});await call('Page.navigate',{url:'http://127.0.0.1:3000/?startup=storage#communication'});await until(`!!document.querySelector('[data-phrase="starter-2"]')`);await js(`document.querySelector('[data-phrase="starter-2"]').click()`);assert.equal(await js(`document.querySelector('#message').textContent`),'Help Me');
+await js(`location.hash='settings'`);await until(`!!document.querySelector('#settings-form')`);await js(`document.querySelector('#settings-form').requestSubmit()`);await until(`document.querySelector('#notice').textContent.includes('existing saved data has not been changed')`);console.log('PASS unresponsive storage times out; essential AAC opens; saves cannot overwrite unloaded records');await call('Page.removeScriptToEvaluateOnNewDocument',{identifier:injected.identifier});
+await call('Network.setBypassServiceWorker',{bypass:false});await call('Page.navigate',{url:'http://127.0.0.1:3000/'});await until(`document.querySelector('main')?.dataset.ready==='true'`);ws.close();
