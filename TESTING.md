@@ -39,3 +39,11 @@ Replaced the POSIX-only static-file prefix check with platform-aware relative-pa
 ## Direct communication speech
 
 Removed Speak, Repeat speech, and Clear message controls. Every communication picture activation dispatches its phrase immediately, including consecutive activations of the same picture. Browser tests verify the sequence Water, Water, Help Me and the absence of the removed controls. Audible playback still depends on device/browser voices.
+
+## Connected profiles, companions, and Tala series release
+
+- Build and syntax checks passed. Automated suites cover optional/invalid birthdays, exact child/teen/adult age transitions, optional gender suggestions, explicit voice override, manual pitch, Filipino/Tagalog voice tags, complete bilingual story content, scene references, and SVG response MIME types.
+- `tests/world-browser.mjs` passed on the updated production server at localhost:3010: legacy/default records preserved; separate child/teen/adult profiles; isolated journals/boards; birthday/gender and voice settings; repeat-click and native Enter speech dispatch; character selection; original illustrated story narration and choices; all 15 pages and series completion; library/next-episode navigation; bookmarks and reload persistence; Filipino text; nine routes plus story reader at 360, 768, and 1024px widths without horizontal overflow; offline illustration loading and progress; profile deletion preserving other records; and a clearly disabled Google sign-in design. No runtime exceptions were observed.
+- Existing core browser flow, home-only enabled ad-placeholder suite, and startup/storage-failure suites were rerun and passed after the new build. No private profile/journal data is sent to a server or cached in the service-worker cache.
+- Speech tests inspect dispatched utterance text, selected voice, rate, and pitch. They do not establish audible voice gender/age, voice quality, availability on a real device, or physical assistive-device usability. Real-device installation and manual screen-reader review remain necessary.
+- Local profiles are not authenticated accounts. Google sign-in, cloud sync, downloadable activity templates, full character animation, checkout, and live ads remain unimplemented. These are explicitly described as future work in the app and PRODUCT.md.

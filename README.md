@@ -30,8 +30,22 @@ If a previously installed PWA still shows an older version, close all its tabs/w
 - Communication Corner: 15 bilingual starter pictures across six categories; press a picture to speak immediately; press again to repeat. Custom categories and buttons, editing, reordering, favorites, and locally stored photos. Starter safety buttons remain available and cannot be deleted.
 - Play & Learn: Touch & Discover, Animal Friends, Colors & Shapes, and My Favorites. Repeatable interactions, optional generated gentle tones or device speech, no timers, scores, or penalties. Animal audio is explicitly speech of the name; animal sound recordings are not included.
 - My Little World: create, edit, delete, chronological history, date filtering, simple observation counts, JSON and CSV exports. No medical predictions or inferred emotions.
-- Caregiver settings: nickname, optional avatar, English/Filipino phrases, voice and speed, larger buttons, grid density/spacing, complexity, sounds/animations, photos, export and local deletion.
+- Caregiver settings: multiple local profiles, optional birthday/gender, original companions, nickname, optional avatar, English/Filipino phrases, voice and speed, larger buttons, grid density/spacing, complexity, sounds/animations, photos, export and local deletion.
 - PWA: ANAIA manifest, 192/512 PNG icons, maskable icon, Apple touch icon, content-versioned shell cache, offline local records, supported browser install prompt, Safari instructions.
+
+## Profiles, voices, companions, and Tala stories
+
+Open **Caregiver → Profiles & voices** to add/edit a local profile (up to 10 on one device). Nickname is required; birthday and gender are optional. If no birthday is entered, choose Child, Teen, or Adult. Each profile has independent settings, buttons, journal entries, categories, and story places. Existing data remains in the initial profile without destructive migration. Switching profile stops current speech. Deleting a profile deletes only its records; the initial profile is preserved. Export all local data creates a version 2 JSON backup covering every profile, including any optional birthday/gender—keep this private. Backup import is not implemented yet.
+
+The companion gallery introduces original Tala, Bituin, Kiko, and Maya characters, available to any profile. Their local SVG illustrations and original AAC pictograms remain available offline after caching. Caregiver-uploaded photographs still take priority over a built-in picture.
+
+**Stories → Tala & the Little Lights** contains three complete bilingual episodes (15 pages total): *The Little Light*, *Kiko's Own Pace*, and *Maya's Quiet Song*. Narrate only when the reader presses Listen, stop at any time, hear choice cards, save a bookmark, return to a saved page, and continue to the next episode. Story illustrations use gentle entrance motion and honor reduced-motion settings. This is not full video/character animation or an AI pet. No child-facing screen contains ads or purchase prompts.
+
+**Voice flexibility:** compatible device voices are suggested using the profile's optional gender and language; age changes default pace/pitch slightly. Browser voice names are an imperfect hint: age/gender are not reliable browser metadata, and an authentic child's voice cannot be promised. A caregiver's explicit saved voice always wins. Uncheck age suggestions to use manual pitch, and adjust speed independently. Preview the actual device voice before choosing it. No voice cloning, recordings upload, or external speech service is used. English/Filipino story text is bundled; the surrounding UI is primarily English.
+
+**Google sign-in was deferred at the user's request.** The account page is a clearly disabled design only. It cannot authenticate, create an account, or sync records, and requires no Google credentials. All child profile records remain on the device. Local profiles are not password protected and should not be mistaken for isolated cloud accounts.
+
+See [PRODUCT.md](PRODUCT.md) for the character bible, story themes, design reasoning, and prioritized ideas for printable activity packs, routines, access modes, and future caregiver accounts.
 
 ## Railway deployment
 
@@ -129,3 +143,5 @@ Use a disposable browser profile: the browser test clears this origin's local da
 3. Consistent bilingual UI, professionally reviewed Filipino phrases, locally licensed pictograms and animal recordings, and additional motor-access options.
 4. Complete and audit authenticated payment ledger, provider sandbox integration, refunds, and recovery before enabling sales.
 5. Optional consent-based encrypted sync and expanded games/themes. Assess any advertising network separately; keep live ads disabled until child-directed policies and placement can be enforced.
+
+New connected-world browser suite: start a production server with `PORT=3010 node server.mjs` (PowerShell: `$env:PORT=3010; node server.mjs`), keep the test Chromium running, then run `node tests/world-browser.mjs`. It resets only its disposable localhost:3010 origin, not the deployed app.

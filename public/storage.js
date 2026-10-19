@@ -58,3 +58,15 @@ export async function erase() {
     tx.onabort = () => reject(tx.error);
   });
 }
+// Delete one profile's records without touching any other profile.
+export async function removeKeys(keys, updates = {}) {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction('records', 'readwrite');
+    keys.forEach(key => tx.objectStore('records').delete(key));
+    Object.entries(updates).forEach(([key,value])=>tx.objectStore('records').put(value,key));
+    tx.oncomplete = resolve;
+    tx.onerror = () => reject(tx.error);
+    tx.onabort = () => reject(tx.error);
+  });
+}
