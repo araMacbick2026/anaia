@@ -552,3 +552,5 @@ export const stories = [
   }
 ];
 export function storyById(id){return stories.find(s=>s.id===id);}
+// Public content identity: prevent a cached app from playing a different revision's text.
+export function storyTextVersion(story,language){let hash=2166136261;for(const character of story.pages.map(page=>page[language]).join('\n\n'))hash=Math.imul(hash^character.charCodeAt(0),16777619);return (hash>>>0).toString(16).padStart(8,'0');}

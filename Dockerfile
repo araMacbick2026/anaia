@@ -12,7 +12,7 @@ COPY --from=build /app/dist ./dist
 COPY package.json server.mjs ./
 COPY src ./src
 COPY public/payment-links.js public/stories.js ./public/
-RUN chmod -R a+rX /app
-USER node
+COPY scripts/start-container.sh ./scripts/start-container.sh
+RUN apk add --no-cache su-exec && chmod -R a+rX /app
 EXPOSE 3000
-CMD ["node", "server.mjs"]
+CMD ["sh", "scripts/start-container.sh"]
