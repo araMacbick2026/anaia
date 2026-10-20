@@ -1,27 +1,554 @@
+// Fixed, original bilingual story scripts. Choice metadata is rendered only after each ending.
 export const stories = [
- {id:'little-light',episode:1,title:'The Little Light',filTitle:'Ang Munting Liwanag',theme:'Every way of communicating belongs.',companion:'bituin',palette:'night',description:'Tala and Bituin discover a garden where every voice can belong.',pages:[
-  {scene:'window',cast:['tala','bituin'],en:'At her window, Tala noticed a little light. It blinked slowly, like a hello that had all the time in the world.',fil:'Sa bintana, may napansing munting liwanag si Tala. Dahan-dahan itong kumikislap, parang kumukumusta nang walang pagmamadali.',prompt:'How could Tala say hello?',filPrompt:'Paano makakabati si Tala?',choices:[['👋','Hello!','Kumusta!'],['💬','I use pictures.','Gumagamit ako ng mga larawan.']]},
-  {scene:'garden',cast:['tala','bituin'],en:'“I’m Bituin,” said the light. Tala pressed a picture on her board. “I want to explore.” Bituin waited, then made room beside the garden path.',fil:'“Ako si Bituin,” sabi ng liwanag. Pinindot ni Tala ang larawan sa kanyang board. “Gusto kong maglibot.” Naghintay si Bituin at nagbigay ng puwang sa tabi ng daan.'},
-  {scene:'flowers',cast:['tala','bituin'],en:'Some flowers were tall. Some stayed close to the ground. None had to grow the same way to belong in the garden.',fil:'May matataas na bulaklak. May malapit sa lupa. Hindi kailangang pare-pareho ang paglaki nila para maging bahagi ng hardin.',prompt:'What would Tala like to notice?',filPrompt:'Ano ang gustong pansinin ni Tala?',choices:[['🌼','The flowers.','Ang mga bulaklak.'],['⭐','The stars.','Ang mga bituin.']]},
-  {scene:'bench',cast:['tala','bituin'],en:'After a while, Tala chose another picture. “I need a break.” “Of course,” said Bituin. The garden would still be there after a rest.',fil:'Maya-maya, pumili si Tala ng ibang larawan. “Kailangan kong magpahinga.” “Siyempre,” sabi ni Bituin. Nariyan pa rin ang hardin pagkatapos magpahinga.',prompt:'A useful picture to remember',filPrompt:'Isang larawang maaaring tandaan',choices:[['🌿','I need a break.','Kailangan kong magpahinga.'],['💧','I want water.','Gusto ko ng tubig.']]},
-  {scene:'night',cast:['tala','bituin'],en:'“Your pictures helped me understand,” said Bituin. Tala looked at the little light. A picture, a word, a movement, a pause—there were many ways to be heard.',fil:'“Nakatulong ang mga larawan mo para maintindihan kita,” sabi ni Bituin. Maraming paraan para maunawaan: larawan, salita, kilos, o paghinto.'}
- ]},
- {id:'kikos-own-pace',episode:2,title:'Kiko’s Own Pace',filTitle:'Sa Sariling Bilis ni Kiko',theme:'There is no race to join in.',companion:'kiko',palette:'garden',description:'A thoughtful turtle helps the friends make a game with room for everyone.',pages:[
-  {scene:'garden',cast:['tala','kiko'],en:'Kiko the turtle was arranging colored stones. Tala rolled beside him. “Can I play?” she asked with her picture board. Kiko nodded. There was plenty of room.',fil:'Nag-aayos ng makukulay na bato si Kiko. Lumapit si Tala. “Puwede akong maglaro?” tanong niya gamit ang picture board. Tumango si Kiko. Maluwag ang puwesto.'},
-  {scene:'shapes',cast:['kiko'],en:'“Let’s choose one shape at a time,” said Kiko. Tala liked the blue circle. Kiko liked the yellow square. They could like different things and still play together.',fil:'“Pumili tayo ng tig-isang hugis,” sabi ni Kiko. Gusto ni Tala ang asul na bilog. Gusto ni Kiko ang dilaw na parisukat. Puwedeng magkaiba ang gusto at maglaro pa rin nang magkasama.',prompt:'Which shape would you choose?',filPrompt:'Aling hugis ang pipiliin mo?',choices:[['🔵','Blue circle.','Asul na bilog.'],['🟨','Yellow square.','Dilaw na parisukat.']]},
-  {scene:'garden',cast:['tala','kiko'],en:'A stone was too far away. Tala chose “Help me.” Kiko brought the tray closer. They changed the game so both friends could reach.',fil:'May batong malayo. Pinili ni Tala ang “Tulungan mo ako.” Inilapit ni Kiko ang lalagyan. Binago nila ang laro para pareho silang makaabot.',prompt:'It is okay to ask.',filPrompt:'Puwedeng humingi ng tulong.',choices:[['🆘','Help me.','Tulungan mo ako.'],['✋','Please wait.','Sandali lang.']]},
-  {scene:'bench',cast:['kiko','tala'],en:'Kiko took his time. Tala took hers. No buzzer rang. No one lost a turn. “This is our kind of game,” said Kiko.',fil:'Sinunod ni Kiko ang sarili niyang bilis. Ganoon din si Tala. Walang buzzer. Walang nawalan ng pagkakataon. “Ito ang laro natin,” sabi ni Kiko.'},
-  {scene:'flowers',cast:['tala','kiko'],en:'When the tray was full, they left space for another friend. Belonging did not mean doing everything the same way. It meant making room.',fil:'Nang mapuno ang lalagyan, naglaan sila ng puwesto para sa isa pang kaibigan. Hindi kailangang pare-pareho ang paraan. Ang mahalaga ay may puwang para sa lahat.'}
- ]},
- {id:'mayas-quiet-song',episode:3,title:'Maya’s Quiet Song',filTitle:'Ang Tahimik na Awit ni Maya',theme:'Comfort and choices can change.',companion:'maya',palette:'sunrise',description:'Maya learns that a song can be shared through sound, pictures, or a quiet moment.',pages:[
-  {scene:'sunrise',cast:['tala','maya'],en:'Maya the bird had a new song. Before she sang, she asked, “Would you like music?” Tala looked at her board. Maya waited for a choice.',fil:'May bagong awit si Maya. Bago kumanta, nagtanong siya, “Gusto mo ba ng musika?” Tumingin si Tala sa board. Naghintay si Maya ng pagpili.',prompt:'Both choices are welcome.',filPrompt:'Puwede ang alinman sa dalawang pagpili.',choices:[['🎵','I want music.','Gusto ko ng musika.'],['🌿','I want quiet.','Gusto ko ng katahimikan.']]},
-  {scene:'music',cast:['maya','bituin'],en:'Maya drew the song with little shapes. Bituin traced the rhythm slowly in the air. Music could be something to hear, to see, or just to imagine.',fil:'Iginuhit ni Maya ang awit gamit ang maliliit na hugis. Dahan-dahang iginuhit ni Bituin ang ritmo sa hangin. Puwedeng pakinggan, tingnan, o isipin ang musika.'},
-  {scene:'garden',cast:['tala','maya'],en:'After one verse, Tala chose “Stop.” Maya stopped. A yes could become a no. A friend could ask for something different.',fil:'Pagkatapos ng isang saknong, pinili ni Tala ang “Tigil.” Tumigil si Maya. Puwedeng magbago ang oo at maging hindi. Puwedeng humiling ng iba.',prompt:'Words that can help',filPrompt:'Mga salitang makatutulong',choices:[['✋','Stop.','Tigil.'],['🔁','Again, please.','Ulit, pakiusap.']]},
-  {scene:'bench',cast:['tala','maya'],en:'They sat quietly together. Maya did not need Tala to smile or explain. She stayed nearby, ready to listen when Tala wanted to share.',fil:'Tahimik silang magkasama. Hindi kailangang ngumiti o magpaliwanag ni Tala. Nasa tabi lang si Maya, handang makinig kung may gustong ibahagi si Tala.'},
-  {scene:'night',cast:['tala','bituin','kiko','maya'],en:'That evening, the friends made a promise: ask, wait, listen, and leave room for a new choice. Tomorrow could be a different kind of day. They would discover it together.',fil:'Nang gabing iyon, nangako ang magkakaibigan: magtanong, maghintay, makinig, at magbigay-puwang sa bagong pagpili. Maaaring iba ang bukas. Magkasama nila itong tutuklasin.'}
- ]},
-{"id": "rainy-parade", "episode": 4, "title": "The Rainy-Day Parade", "filTitle": "Ang Parada sa Maulang Araw", "companion": "maya", "palette": "sunrise", "description": "A paper hat, a tiny parade, and room to join in your own way.", "theme": "Watching and joining are both welcome.", "pages": [{"scene": "window", "cast": ["tala", "maya"], "en": "Plip, plop! Rain tapped the window. Maya arrived wearing a paper hat. “A rainy-day parade?” she asked. Tala chose “Yes!” on her board.", "fil": "Plip, plop! Tumutulo ang ulan sa bintana. Dumating si Maya na may sombrerong papel. “Parada sa maulang araw?” tanong niya. Pinili ni Tala ang “Oo!” sa board."}, {"scene": "music", "cast": ["tala", "maya"], "en": "Maya offered a soft drum or a waving ribbon. “You can choose, or just watch,” she said. There was a place beside the parade for Tala’s chair.", "fil": "Nag-alok si Maya ng mahinang tambol o laso. “Puwedeng pumili o manood lang,” sabi niya. May puwang sa parada para sa wheelchair ni Tala.", "prompt": "What belongs in your parade?", "filPrompt": "Ano ang gusto mo sa parada?", "choices": [["🎀", "A ribbon!", "Isang laso!"], ["👀", "I want to watch.", "Gusto kong manood."]]}, {"scene": "garden", "cast": ["tala", "maya"], "en": "The parade went around the pretend puddle. Maya tiptoed. Tala rolled. A paper duck stayed exactly where it was. “Excellent parading, Duck!” said Maya.", "fil": "Umikot ang parada sa kunwaring lusak. Tumiyad si Maya. Gumulong si Tala sa wheelchair. Hindi gumalaw ang papel na pato. “Ang galing mong pum­arada, Pato!” sabi ni Maya."}, {"scene": "bench", "cast": ["tala", "maya"], "en": "Tala chose “Quiet, please.” The drum stopped. The ribbon still danced slowly. They made a quiet parade, with space to rest.", "fil": "Pinili ni Tala ang “Tahimik muna.” Tumigil ang tambol. Dahan-dahan pa ring gumalaw ang laso. Naging tahimik ang parada, na may puwang para magpahinga.", "prompt": "What could we ask for?", "filPrompt": "Ano ang puwede nating hilingin?", "choices": [["🌿", "Quiet, please.", "Tahimik muna."], ["🔁", "Again, please.", "Ulit, pakiusap."]]}, {"scene": "sunrise", "cast": ["tala", "maya"], "en": "At last, sunlight peeked through. “Same parade tomorrow?” asked Maya. Tala had time to choose. The paper duck did not mind waiting.", "fil": "Sumilip ang araw. “Parada ulit bukas?” tanong ni Maya. May oras si Tala para pumili. Handang maghintay ang papel na pato."}]},
-{"id": "missing-mango", "episode": 5, "title": "The Missing Mango", "filTitle": "Ang Nawawalang Mangga", "companion": "kiko", "palette": "garden", "description": "Follow a picnic mystery with Kiko and a very surprising hiding place.", "theme": "Asking for help is part of exploring.", "pages": [{"scene": "garden", "cast": ["tala", "kiko"], "en": "Kiko packed a picnic: a cloth, two cups, and one mango. But at the garden table—where was the mango? “A mystery!” he whispered.", "fil": "Naghanda si Kiko ng piknik: tela, dalawang tasa, at isang mangga. Pero sa mesa sa hardin—nasaan ang mangga? “Isang misteryo!” bulong niya."}, {"scene": "flowers", "cast": ["tala", "kiko"], "en": "Tala noticed something yellow by the flowers. Kiko looked closely. It was a leaf! “A very good clue,” he said. “Even when it is a leaf.”", "fil": "May napansing dilaw si Tala sa mga bulaklak. Tiningnan ni Kiko. Dahon pala! “Magandang palatandaan,” sabi niya. “Kahit dahon ito.”", "prompt": "Where shall we look?", "filPrompt": "Saan tayo titingin?", "choices": [["🌼", "By the flowers.", "Sa mga bulaklak."], ["🧺", "In the basket.", "Sa basket."]]}, {"scene": "bench", "cast": ["tala", "kiko"], "en": "The basket was on a high shelf. Tala chose “Help me.” Kiko asked their grown-up friend to bring it down. Nobody had to reach somewhere uncomfortable.", "fil": "Nasa mataas na istante ang basket. Pinili ni Tala ang “Tulungan mo ako.” Hiniling ni Kiko sa nakatatandang kaibigan na ibaba ito. Walang kailangang umabot nang hindi komportable."}, {"scene": "shapes", "cast": ["tala", "kiko"], "en": "Under the square napkin was something round. Under the round lid was—one mango! “I packed it very safely,” said Kiko. “Even from myself!”", "fil": "Sa ilalim ng parisukat na napkin ay may bilog. Sa ilalim ng bilog na takip ay—isang mangga! “Napakaingat ng pagkakatago ko,” sabi ni Kiko. “Kahit sa sarili ko!”"}, {"scene": "garden", "cast": ["tala", "kiko"], "en": "They enjoyed the picnic together. Tala could look, smell, taste with support, or choose something else. Solving the mystery was enough of an adventure.", "fil": "Magkasama silang nagpiknik. Puwedeng tumingin, umamoy, tumikim nang may tulong, o pumili ng iba si Tala. Isang magandang pakikipagsapalaran na ang paglutas sa misteryo.", "prompt": "A choice for our picnic", "filPrompt": "Pagpili sa piknik", "choices": [["💧", "I want water.", "Gusto ko ng tubig."], ["🌿", "I need a break.", "Kailangan kong magpahinga."]]}]},
-{"id": "moon-pajamas", "episode": 6, "title": "The Moon’s Pajama Party", "filTitle": "Ang Pajama Party ng Buwan", "companion": "bituin", "palette": "night", "description": "Bituin imagines a moon party where quiet guests are welcome.", "theme": "Pretend play can be gentle.", "pages": [{"scene": "window", "cast": ["tala", "bituin"], "en": "“The moon forgot its pajamas!” said Bituin. Tala looked up. The moon looked quite round and quite awake. “Shall we imagine a party?”", "fil": "“Nakalimutan ng buwan ang pajama niya!” sabi ni Bituin. Tumingala si Tala. Bilog at gising na gising ang buwan. “Mag-isip tayo ng isang party?”"}, {"scene": "night", "cast": ["tala", "bituin"], "en": "They imagined cloud slippers, a starry blanket, and a tiny pillow for a comet. The comet would not stop wiggling. “Just getting comfortable,” it said.", "fil": "Naisip nila ang tsinelas na ulap, kumot na mabituin, at maliit na unan ng kometa. Hindi mapakali ang kometa. “Nagpapakomportable lang,” sabi nito.", "prompt": "Choose something cozy", "filPrompt": "Pumili ng komportable", "choices": [["⭐", "A star blanket.", "Kumot na mabituin."], ["☁️", "Cloud slippers.", "Tsinelas na ulap."]]}, {"scene": "bench", "cast": ["tala", "bituin"], "en": "Tala chose a soft light. Bituin imagined a little lamp beside the moon. No one had to close their eyes. Looking at the pictures was welcome too.", "fil": "Pinili ni Tala ang banayad na ilaw. Nag-isip si Bituin ng maliit na lampara sa tabi ng buwan. Walang kailangang pumikit. Puwede ring tumingin sa mga larawan."}, {"scene": "music", "cast": ["tala", "bituin"], "en": "“A song?” asked Bituin. “Or quiet?” The moon waited politely. In their pretend party, a new choice was always allowed.", "fil": "“Awit?” tanong ni Bituin. “O katahimikan?” Magalang na naghintay ang buwan. Sa kanilang kunwaring party, puwedeng magbago ng pagpili.", "prompt": "What would you like?", "filPrompt": "Ano ang gusto mo?", "choices": [["🎵", "A gentle song.", "Banayad na awit."], ["🌿", "Quiet, please.", "Tahimik muna."]]}, {"scene": "night", "cast": ["tala", "bituin"], "en": "The comet finally found its pillow. The moon kept its cloud slippers. Tala and Bituin waved goodnight to their pretend friends. Another story could wait until they were ready.", "fil": "Nahanap din ng kometa ang unan nito. Suot pa rin ng buwan ang tsinelas na ulap. Kumaway sina Tala at Bituin sa kanilang mga kunwaring kaibigan. Puwedeng maghintay ang susunod na kuwento hanggang handa na sila."}]}
+  {
+    "id": "little-light",
+    "episode": 1,
+    "title": "The Little Light",
+    "filTitle": "Ang Munting Liwanag",
+    "companion": "bituin",
+    "palette": "night",
+    "description": "Tala has lost her red crayon. Bituin is sure he knows where to look. He is wrong.",
+    "theme": "Listen to what someone is telling you before deciding how to help.",
+    "lesson": "Listen to what someone is telling you before deciding how to help.",
+    "filLesson": "Pakinggan muna ang sinasabi ng kaibigan bago magpasya kung paano tutulong.",
+    "tryTogether": "Hide a familiar picture partly behind another picture. Take turns giving a clue: up, down, or beside. Looking, pointing, using a board, or asking a partner to move the pictures all count.",
+    "filTryTogether": "Bahagyang itago ang isang pamilyar na larawan sa likod ng isa pa. Magpalitan sa pagbibigay ng palatandaan: taas, baba, o tabi. Puwedeng tumingin, tumuro, gumamit ng board, o magpatulong sa paglipat ng larawan.",
+    "pages": [
+      {
+        "scene": "window",
+        "cast": [
+          "tala",
+          "bituin"
+        ],
+        "en": "Tala was drawing a sunset at her window. Yellow sun. Orange sky. Where was the red crayon? She checked her tray. She checked the pencil pot. No red. Outside, Bituin was lighting the garden path. Tala chose “Help me” on her picture board.",
+        "fil": "Gumuguhit si Tala ng takipsilim sa tabi ng bintana. Dilaw na araw. Kahel na langit. Nasaan ang pulang krayola? Tiningnan niya ang tray at ang lalagyan ng lapis. Wala. Sa labas, iniilawan ni Bituin ang daan. Pinili ni Tala ang “Tulungan mo ako” sa picture board.",
+        "prompt": "Help Bituin look",
+        "filPrompt": "Tulungan si Bituin na maghanap",
+        "choices": [
+          [
+            "⬇️",
+            "Look down.",
+            "Tumingin sa baba."
+          ],
+          [
+            "⬆️",
+            "Look up.",
+            "Tumingin sa taas."
+          ]
+        ]
+      },
+      {
+        "scene": "garden",
+        "cast": [
+          "tala",
+          "bituin"
+        ],
+        "en": "“I’ll find it!” said Bituin. He shone on a flowerpot. Then a bush. Then the tallest branch. “Perhaps a bird borrowed it.” Tala chose “Wait.” Bituin came back down. “All right. Show me.”",
+        "fil": "“Hahanapin ko!” sabi ni Bituin. Inilawan niya ang paso, ang palumpong, at ang pinakamataas na sanga. “Baka hiniram ng ibon.” Pinili ni Tala ang “Sandali.” Bumaba si Bituin. “Sige. Ipakita mo sa akin.”",
+        "prompt": "What could you tell a friend?",
+        "filPrompt": "Ano ang puwede mong sabihin sa kaibigan?",
+        "choices": [
+          [
+            "✋",
+            "Wait, please.",
+            "Sandali, pakiusap."
+          ],
+          [
+            "🆘",
+            "Help me.",
+            "Tulungan mo ako."
+          ]
+        ]
+      },
+      {
+        "scene": "bench",
+        "cast": [
+          "tala",
+          "bituin"
+        ],
+        "en": "Tala looked toward the bench. Her board said “Down.” Bituin lowered his light. There, behind a bench leg, was a red tip. “I was looking much too high,” he said. “Shall I bring it to your tray?” Tala chose “Yes.”",
+        "fil": "Tumingin si Tala sa bangko. “Sa baba,” ang nasa board niya. Ibinaba ni Bituin ang liwanag. Sa likod ng paa ng bangko, may pulang dulo. “Masyado pala akong nakatingala,” sabi niya. “Ilalagay ko ba sa tray mo?” Pinili ni Tala ang “Oo.”"
+      },
+      {
+        "scene": "window",
+        "cast": [
+          "tala",
+          "bituin"
+        ],
+        "en": "Back at the window, Tala finished the red edge of her sunset. Then she added a small yellow star. “Is that me?” asked Bituin. Tala chose “Yes.” “My points are a bit crooked.” Tala added one more crooked point.",
+        "fil": "Sa bintana, tinapos ni Tala ang pulang gilid ng takipsilim. Nagdagdag siya ng maliit na dilaw na bituin. “Ako ba iyan?” tanong ni Bituin. Pinili ni Tala ang “Oo.” “Medyo tabingi ang mga dulo ko.” Dinagdagan pa ni Tala ng isang tabinging dulo."
+      },
+      {
+        "scene": "night",
+        "cast": [
+          "tala",
+          "bituin"
+        ],
+        "en": "Bituin hung beside the drawing until bedtime. “Tomorrow, I’ll ask where to look first,” he said. Tala put the red crayon in its pot. Bituin checked the bench anyway. Just in case the blue one had escaped.",
+        "fil": "Nanatili si Bituin sa tabi ng guhit hanggang oras ng pagtulog. “Bukas, magtatanong muna ako kung saan titingin,” sabi niya. Ibinalik ni Tala ang pulang krayola. Sinilip pa rin ni Bituin ang bangko. Baka naman ang asul ang nagtago."
+      }
+    ]
+  },
+  {
+    "id": "kikos-own-pace",
+    "episode": 2,
+    "title": "Kiko’s Own Pace",
+    "filTitle": "Sa Sariling Bilis ni Kiko",
+    "companion": "kiko",
+    "palette": "garden",
+    "description": "A toy boat needs a bridge. Maya wants to finish quickly; Kiko wants it to stay up.",
+    "theme": "Taking your time and sharing the jobs can help you solve a problem.",
+    "lesson": "Taking your time and sharing the jobs can help you solve a problem.",
+    "filLesson": "Makatutulong ang paglalaan ng oras at paghahati ng gawain sa paglutas ng problema.",
+    "tryTogether": "Make a pretend bridge with two picture cards and a strip of paper, with a caregiver moving things if needed. Choose what goes underneath: a boat or a turtle. Try one change together.",
+    "filTryTogether": "Gumawa ng kunwaring tulay gamit ang dalawang picture card at isang papel. Puwedeng ang tagapag-alaga ang maglipat ng mga ito. Pumili ng dadaan sa ilalim: bangka o pagong. Subukan ang isang pagbabago nang magkasama.",
+    "pages": [
+      {
+        "scene": "garden",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "Kiko brought a paper boat to the garden. Tala had a blue cloth for the river. “It needs a bridge,” said Maya. She piled three blocks on one side and three on the other. “Done!” The bridge fell before the boat reached it.",
+        "fil": "May dalang bangkang papel si Kiko sa hardin. May asul na telang ilog si Tala. “Kailangan ng tulay,” sabi ni Maya. Nagpatong siya ng tig-tatlong bloke sa magkabilang panig. “Tapos!” Bumagsak ang tulay bago makarating ang bangka.",
+        "prompt": "Change the pretend bridge",
+        "filPrompt": "Baguhin ang kunwaring tulay",
+        "choices": [
+          [
+            "🌉",
+            "A taller bridge.",
+            "Mas mataas na tulay."
+          ],
+          [
+            "⛵",
+            "A smaller sail.",
+            "Mas maliit na layag."
+          ]
+        ]
+      },
+      {
+        "scene": "shapes",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "Kiko sorted the blocks by shape. “Wide ones at the bottom,” he said. Maya reached for another block. Tala chose “Wait” on her board. Kiko checked both sides. One was leaning. He nudged it straight. This time, nothing fell.",
+        "fil": "Inayos ni Kiko ang mga bloke ayon sa hugis. “Malalapad sa ilalim,” sabi niya. Kumuha si Maya ng isa pang bloke. Pinili ni Tala ang “Sandali” sa board. Sinuri ni Kiko ang magkabilang panig. May nakatagilid. Inayos niya ito. Walang bumagsak.",
+        "prompt": "Words for working together",
+        "filPrompt": "Mga salita sa pagtutulungan",
+        "choices": [
+          [
+            "✋",
+            "Please wait.",
+            "Sandali, pakiusap."
+          ],
+          [
+            "🤝",
+            "Let’s try together.",
+            "Subukan natin nang magkasama."
+          ]
+        ]
+      },
+      {
+        "scene": "garden",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "“Can I have a job?” asked Maya. Tala chose the long piece for the top. Kiko checked its balance. Maya brought the boat. They were ready. But the boat’s tall paper sail bumped the bridge. “Oh,” said Maya. “Our river has a traffic jam.”",
+        "fil": "“May gagawin ba ako?” tanong ni Maya. Pinili ni Tala ang mahabang bloke para sa ibabaw. Sinuri ni Kiko ang balanse. Dinala ni Maya ang bangka. Handa na sila. Pero sumabit ang mataas na layag sa tulay. “Ay,” sabi ni Maya. “May trapiko sa ilog natin.”"
+      },
+      {
+        "scene": "bench",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "They could make the bridge taller or fold the sail lower. Tala chose the sail. Maya folded it with Kiko’s help. The boat slid underneath. “Again!” Tala’s board said. Back came the boat. Under it went. The bridge stayed up.",
+        "fil": "Puwede nilang taasan ang tulay o tiklupin ang layag. Pinili ni Tala ang layag. Tinupi ito ni Maya sa tulong ni Kiko. Nakadaan ang bangka. “Ulit!” ang nasa board ni Tala. Bumalik ang bangka. Dumaan uli sa ilalim. Nakatayo pa rin ang tulay."
+      },
+      {
+        "scene": "flowers",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "Maya put a leaf on the boat as a passenger. “Where is it going?” she asked. Kiko considered this carefully. Very carefully. Tala chose “Lunch.” “Good,” said Maya. “I hope the passenger brought snacks.”",
+        "fil": "Naglagay si Maya ng dahon sa bangka bilang pasahero. “Saan ito pupunta?” tanong niya. Pinag-isipan iyon ni Kiko. Matagal-tagal din. Pinili ni Tala ang “Tanghalian.” “Mabuti,” sabi ni Maya. “Sana may baong meryenda ang pasahero.”"
+      }
+    ]
+  },
+  {
+    "id": "mayas-quiet-song",
+    "episode": 3,
+    "title": "Maya’s Quiet Song",
+    "filTitle": "Ang Tahimik na Awit ni Maya",
+    "companion": "maya",
+    "palette": "sunrise",
+    "description": "Maya has planned a surprise song. Her kitchen-band rehearsal is rather too noisy.",
+    "theme": "When someone asks you to stop, stop first. Then ask what would help.",
+    "lesson": "When someone asks you to stop, stop first. Then ask what would help.",
+    "filLesson": "Kapag may nagsabing tumigil, tumigil muna. Pagkatapos, itanong kung ano ang makatutulong.",
+    "tryTogether": "Offer a quiet sound and a silent picture of music. Ask which to try, and agree on a stop signal first. Stop straight away when it is used. Watching or skipping is welcome.",
+    "filTryTogether": "Mag-alok ng mahinang tunog at tahimik na larawan ng musika. Magtanong kung alin ang susubukan at magkasundo muna sa senyas ng pagtigil. Tumigil agad kapag ginamit ito. Puwedeng manood o lumaktaw.",
+    "pages": [
+      {
+        "scene": "sunrise",
+        "cast": [
+          "tala",
+          "maya"
+        ],
+        "en": "Maya was planning a song for Kiko’s picnic. She found a wooden spoon and an empty pot. “A proper band!” she said. Tala came to listen. Maya tapped the pot. Then she tapped it harder. CLANG. Tala chose “Stop.”",
+        "fil": "Naghahanda si Maya ng awit para sa piknik ni Kiko. Nakakita siya ng sandok at kalderong walang laman. “Banda na ito!” sabi niya. Dumating si Tala para makinig. Tinapik ni Maya ang kaldero. Nilakasan niya. KLANG. Pinili ni Tala ang “Tigil.”",
+        "prompt": "Choose what to try",
+        "filPrompt": "Pumili ng susubukan",
+        "choices": [
+          [
+            "🎵",
+            "A quiet song.",
+            "Mahinang awit."
+          ],
+          [
+            "🌿",
+            "A break.",
+            "Pahinga."
+          ]
+        ]
+      },
+      {
+        "scene": "music",
+        "cast": [
+          "tala",
+          "maya"
+        ],
+        "en": "Maya put the spoon down. Her new song was not even halfway through. “Too loud?” she asked. Tala chose “Yes.” Maya looked at the pot. “It is a very enthusiastic pot,” she said. “We don’t have to use it.”",
+        "fil": "Ibinaba ni Maya ang sandok. Hindi pa nangangalahati ang bago niyang awit. “Masyadong malakas?” tanong niya. Pinili ni Tala ang “Oo.” Tiningnan ni Maya ang kaldero. “Napakasipag tumunog ng kaldero,” sabi niya. “Hindi naman natin kailangang gamitin.”",
+        "prompt": "Practise a stop signal",
+        "filPrompt": "Subukan ang senyas ng pagtigil",
+        "choices": [
+          [
+            "✋",
+            "Stop.",
+            "Tigil."
+          ],
+          [
+            "🔁",
+            "Again, please.",
+            "Ulit, pakiusap."
+          ]
+        ]
+      },
+      {
+        "scene": "garden",
+        "cast": [
+          "tala",
+          "maya"
+        ],
+        "en": "“A softer song, or a break?” Maya asked. Tala chose a break. They watched an ant carry a crumb past the bench. The crumb was nearly as big as the ant. Maya had plenty to say about that, but she saved it for later.",
+        "fil": "“Mas mahinang awit, o pahinga?” tanong ni Maya. Pinili ni Tala ang pahinga. Pinanood nila ang langgam na may dalang mumo sa tabi ng bangko. Halos kasinglaki ng langgam ang mumo. Maraming gustong sabihin si Maya, pero ipinagpaliban muna niya."
+      },
+      {
+        "scene": "bench",
+        "cast": [
+          "tala",
+          "maya",
+          "kiko"
+        ],
+        "en": "After a while, Tala chose “Music.” Maya hummed the first line, softly. She paused. Tala chose “Again.” At the picnic, Kiko joined with one quiet tap on his cup. The pot stayed under the table, holding the napkins.",
+        "fil": "Maya-maya, pinili ni Tala ang “Musika.” Mahinang humuni si Maya ng unang linya. Huminto siya. Pinili ni Tala ang “Ulit.” Sa piknik, sumabay si Kiko sa isang mahinang tapik sa tasa. Nasa ilalim ng mesa ang kaldero, lalagyan na ng mga napkin."
+      },
+      {
+        "scene": "night",
+        "cast": [
+          "tala",
+          "maya"
+        ],
+        "en": "“Did my song need a drum?” Maya asked on the way home. Tala chose “No.” “Did the napkins need a pot?” Tala chose “No” again. Maya laughed. “Well, they got one anyway.”",
+        "fil": "“Kailangan ba ng tambol ang awit ko?” tanong ni Maya pauwi. Pinili ni Tala ang “Hindi.” “Kailangan ba ng kaldero ang mga napkin?” “Hindi” uli ang pinili ni Tala. Natawa si Maya. “Binigyan pa rin natin sila.”"
+      }
+    ]
+  },
+  {
+    "id": "rainy-parade",
+    "episode": 4,
+    "title": "The Rainy-Day Parade",
+    "filTitle": "Ang Parada sa Maulang Araw",
+    "companion": "maya",
+    "palette": "sunrise",
+    "description": "A soggy paper hat nearly ends the parade before it starts. Tala has another idea.",
+    "theme": "A plan can change. You can feel disappointed and still try something else.",
+    "lesson": "A plan can change. You can feel disappointed and still try something else.",
+    "filLesson": "Puwedeng magbago ang plano. Puwedeng malungkot muna at pagkatapos ay sumubok ng iba.",
+    "tryTogether": "Plan a tiny pretend parade with pictures. Choose a leader and a place to go. A caregiver can move the pictures while the child directs, watches, or changes the plan. No marching is needed.",
+    "filTryTogether": "Magplano ng munting kunwaring parada gamit ang mga larawan. Pumili ng mangunguna at pupuntahan. Puwedeng ilipat ng tagapag-alaga ang mga larawan habang ang bata ay pumipili, nanonood, o nagbabago ng plano. Hindi kailangang magmartsa.",
+    "pages": [
+      {
+        "scene": "window",
+        "cast": [
+          "tala",
+          "maya"
+        ],
+        "en": "Maya had made a parade hat with a very tall feather. She stepped outside. One fat raindrop landed on the paper. Then another. The hat folded over her eyes. “I spent all morning on that,” she said. Tala watched the rain run down the window.",
+        "fil": "Gumawa si Maya ng sombrerong may napakataas na balahibo para sa parada. Lumabas siya. May malaking patak ng ulang tumama sa papel. Sinundan pa ng isa. Lumaylay ang sombrero sa mga mata niya. “Buong umaga ko iyong ginawa,” sabi niya. Pinanood ni Tala ang ulan sa bintana.",
+        "prompt": "Plan your pretend parade",
+        "filPrompt": "Planuhin ang kunwaring parada",
+        "choices": [
+          [
+            "🦆",
+            "The duck leads.",
+            "Ang pato ang mangunguna."
+          ],
+          [
+            "🐢",
+            "Kiko leads.",
+            "Si Kiko ang mangunguna."
+          ]
+        ]
+      },
+      {
+        "scene": "music",
+        "cast": [
+          "tala",
+          "maya"
+        ],
+        "en": "Maya set the wet hat on a towel. She did not want another hat just yet. Tala waited. Then she chose “Inside” on her board. “An inside parade?” asked Maya. “But where would we go?” Tala chose “Kitchen.”",
+        "fil": "Inilapag ni Maya ang basang sombrero sa tuwalya. Ayaw muna niya ng bagong sombrero. Naghintay si Tala. Pagkatapos, pinili niya ang “Sa loob” sa board. “Parada sa loob?” tanong ni Maya. “Pero saan tayo pupunta?” Pinili ni Tala ang “Kusina.”",
+        "prompt": "What could happen next?",
+        "filPrompt": "Ano ang puwedeng isunod?",
+        "choices": [
+          [
+            "🏠",
+            "Try it inside.",
+            "Subukan sa loob."
+          ],
+          [
+            "🌿",
+            "Take a break first.",
+            "Magpahinga muna."
+          ]
+        ]
+      },
+      {
+        "scene": "window",
+        "cast": [
+          "tala",
+          "maya",
+          "kiko"
+        ],
+        "en": "A grown-up helped clear a wide route around the table. Kiko brought his paper duck in a tray. Maya carried a ribbon instead of the hat. Tala chose who would lead. The duck won. “It doesn’t even know the way,” said Kiko.",
+        "fil": "Tumulong ang isang nakatatanda na mag-alis ng mga sagabal sa daan sa paligid ng mesa. Dinala ni Kiko ang papel na pato sa tray. Laso ang dala ni Maya sa halip na sombrero. Pinili ni Tala kung sino ang mangunguna. Ang pato. “Hindi nga nito alam ang daan,” sabi ni Kiko."
+      },
+      {
+        "scene": "window",
+        "cast": [
+          "tala",
+          "maya",
+          "kiko"
+        ],
+        "en": "They went past the chairs, around the table, and up to the kitchen door. Tala chose “Stop.” They stopped for a rest. Rain drummed on the roof. “We forgot the music,” said Maya. Kiko listened. “I think the roof remembered.”",
+        "fil": "Dumaan sila sa mga upuan, umikot sa mesa, at nakarating sa pinto ng kusina. Pinili ni Tala ang “Tigil.” Huminto sila para magpahinga. Tumutunog ang ulan sa bubong. “Nakalimutan natin ang musika,” sabi ni Maya. Nakinig si Kiko. “Naalala naman ng bubong.”"
+      },
+      {
+        "scene": "sunrise",
+        "cast": [
+          "tala",
+          "maya",
+          "kiko"
+        ],
+        "en": "By afternoon, the hat was dry. It still had a big crease across the middle. Maya put it on the paper duck. A perfect fit. “Tomorrow, Captain Duck,” she said, “we check the weather before we leave.”",
+        "fil": "Pagsapit ng hapon, tuyo na ang sombrero. May malaking tupi pa rin sa gitna. Isinuot ito ni Maya sa papel na pato. Tamang-tama. “Bukas, Kapitan Pato,” sabi niya, “titingnan muna natin ang panahon bago lumabas.”"
+      }
+    ]
+  },
+  {
+    "id": "missing-mango",
+    "episode": 5,
+    "title": "The Missing Mango",
+    "filTitle": "Ang Nawawalang Mangga",
+    "companion": "kiko",
+    "palette": "garden",
+    "description": "The picnic mango has disappeared. Kiko knows something the others do not.",
+    "theme": "Telling the truth helps friends work out what to do next. An apology can include a plan to make things right.",
+    "lesson": "Telling the truth helps friends work out what to do next. An apology can include a plan to make things right.",
+    "filLesson": "Makatutulong ang pagsasabi ng totoo para makapagplano ang magkakaibigan. Kasama sa paghingi ng tawad ang pagsisikap na itama ang nagawa.",
+    "tryTogether": "Use a pretend picnic picture. Practise “May I have some?” and waiting for an answer. The partner can say yes or no. Use pictures or words; no eating or food handling is needed.",
+    "filTryTogether": "Gumamit ng larawan ng kunwaring piknik. Subukan ang “Puwede akong humingi?” at maghintay ng sagot. Puwedeng oo o hindi ang sagot ng kapareha. Larawan o salita lang ang kailangan; hindi kailangang kumain o humawak ng pagkain.",
+    "pages": [
+      {
+        "scene": "garden",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "Tala had saved a mango for the picnic. Now the basket held only a napkin. Maya looked beneath the table. Tala checked her tray. Kiko stared at a yellow stain on his own cup. He had eaten the mango before the others arrived.",
+        "fil": "May itinabing mangga si Tala para sa piknik. Pero napkin na lang ang nasa basket. Tumingin si Maya sa ilalim ng mesa. Sinuri ni Tala ang tray niya. Nakatitig si Kiko sa dilaw na mantsa sa tasa niya. Nakain niya ang mangga bago dumating ang iba.",
+        "prompt": "Words Kiko could use",
+        "filPrompt": "Mga salitang magagamit ni Kiko",
+        "choices": [
+          [
+            "💬",
+            "I’m sorry.",
+            "Pasensiya na."
+          ],
+          [
+            "🤲",
+            "May I have some?",
+            "Puwede akong humingi?"
+          ]
+        ]
+      },
+      {
+        "scene": "flowers",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "“Something yellow!” called Maya. She came back with a leaf. Kiko nearly said, “Keep looking.” Instead he took a breath. “I ate it,” he said. “I thought it was mine. I should have asked.” Maya put the leaf down.",
+        "fil": "“May dilaw!” tawag ni Maya. Bumalik siya na may dalang dahon. Muntik nang sabihin ni Kiko, “Hanap pa.” Pero huminga muna siya. “Nakain ko,” sabi niya. “Akala ko, akin. Dapat nagtanong ako.” Ibinaba ni Maya ang dahon.",
+        "prompt": "Make a pretend picnic choice",
+        "filPrompt": "Pumili para sa kunwaring piknik",
+        "choices": [
+          [
+            "💧",
+            "Water, please.",
+            "Tubig, pakiusap."
+          ],
+          [
+            "📖",
+            "Let’s read together.",
+            "Magbasa tayo nang magkasama."
+          ]
+        ]
+      },
+      {
+        "scene": "bench",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "Tala chose “I wanted that.” Kiko nodded. “I’m sorry.” He waited. Tala did not have to say it was all right. At last, she chose “Water.” Kiko asked if he could bring her cup. Tala chose “Yes.”",
+        "fil": "Pinili ni Tala ang “Gusto ko sana iyon.” Tumango si Kiko. “Pasensiya na.” Naghintay siya. Hindi kailangang sabihin ni Tala na ayos lang. Maya-maya, pinili niya ang “Tubig.” Nagtanong si Kiko kung puwede niyang dalhin ang tasa. Pinili ni Tala ang “Oo.”"
+      },
+      {
+        "scene": "shapes",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "They still had their story cards and the blue picnic cloth. Maya set the cards out. Kiko offered to ask their grown-up for another mango next time. “And we can label the basket,” he said. Tala chose a picture that meant “Share.”",
+        "fil": "Nariyan pa ang mga story card at asul na tela ng piknik. Inilatag ni Maya ang mga card. Nag-alok si Kiko na magtanong sa nakatatanda tungkol sa mangga para sa susunod. “Lagyan din natin ng tanda ang basket,” sabi niya. Pinili ni Tala ang larawang “Pagsasaluhan.”"
+      },
+      {
+        "scene": "garden",
+        "cast": [
+          "tala",
+          "kiko",
+          "maya"
+        ],
+        "en": "At the next picnic, Kiko brought the basket to the table unopened. “May I have some?” he asked. Tala chose “Yes.” Maya looked inside. “Any leaves today?” “Only the napkins,” said Kiko. “Those are green.”",
+        "fil": "Sa sumunod na piknik, dinala ni Kiko sa mesa ang basket nang hindi binubuksan. “Puwede akong humingi?” tanong niya. Pinili ni Tala ang “Oo.” Sumilip si Maya. “May mga dahon ngayon?” “Mga napkin lang,” sabi ni Kiko. “Berde kasi ang mga iyon.”"
+      }
+    ]
+  },
+  {
+    "id": "moon-pajamas",
+    "episode": 6,
+    "title": "The Moon’s Pajama Party",
+    "filTitle": "Ang Pajama Party ng Buwan",
+    "companion": "bituin",
+    "palette": "night",
+    "description": "Bituin wants Tala’s blue blanket for a pretend moon party. Tala is already using it.",
+    "theme": "Ask before borrowing. If someone says no, find another way.",
+    "lesson": "Ask before borrowing. If someone says no, find another way.",
+    "filLesson": "Magpaalam bago humiram. Kung hindi ang sagot, humanap ng ibang paraan.",
+    "tryTogether": "Choose two familiar pictures and pretend they belong to different friends. Practise asking to borrow one. Accept either answer, then offer another option. A look, a board, or a partner-assisted choice is welcome.",
+    "filTryTogether": "Pumili ng dalawang pamilyar na larawan at magkunwaring sa magkaibang kaibigan ang mga ito. Magpaalam na hiramin ang isa. Tanggapin ang oo o hindi, saka mag-alok ng ibang pagpipilian. Puwedeng tumingin, gumamit ng board, o magpatulong sa pagpili.",
+    "pages": [
+      {
+        "scene": "window",
+        "cast": [
+          "tala",
+          "bituin"
+        ],
+        "en": "The moon was round and bright outside Tala’s window. Bituin had an idea. “A pajama party for the moon!” He found a little cushion and a paper crown. Then he spotted Tala’s blue blanket. “That would make a wonderful night sky.”",
+        "fil": "Bilog at maliwanag ang buwan sa labas ng bintana ni Tala. May naisip si Bituin. “Pajama party para sa buwan!” Nakakita siya ng maliit na unan at koronang papel. Napansin niya ang asul na kumot ni Tala. “Magandang langit sa gabi iyan.”",
+        "prompt": "Practise asking first",
+        "filPrompt": "Subukang magpaalam muna",
+        "choices": [
+          [
+            "🤲",
+            "May I borrow it?",
+            "Puwede kong hiramin?"
+          ],
+          [
+            "💬",
+            "I’m using it.",
+            "Ginagamit ko ito."
+          ]
+        ]
+      },
+      {
+        "scene": "night",
+        "cast": [
+          "tala",
+          "bituin"
+        ],
+        "en": "Bituin began to pull one corner. Tala chose “Stop.” He let go. “Sorry. May I borrow your blanket?” Tala chose “No.” She was using it. Bituin looked at his little cushion. His party suddenly seemed rather small.",
+        "fil": "Hinila ni Bituin ang isang sulok. Pinili ni Tala ang “Tigil.” Binitiwan niya ito. “Pasensiya na. Puwede kong hiramin ang kumot mo?” Pinili ni Tala ang “Hindi.” Gamit niya iyon. Tiningnan ni Bituin ang maliit na unan. Parang napakaliit na ng party niya.",
+        "prompt": "Both answers are allowed",
+        "filPrompt": "Puwede ang alinman sa dalawang sagot",
+        "choices": [
+          [
+            "✅",
+            "Yes.",
+            "Oo."
+          ],
+          [
+            "✋",
+            "No.",
+            "Hindi."
+          ]
+        ]
+      },
+      {
+        "scene": "bench",
+        "cast": [
+          "tala",
+          "bituin"
+        ],
+        "en": "“What else could we use?” he asked. Tala chose “Pictures.” They found a card with a blue sky and a card with a yellow moon. Bituin put the cushion in front. The paper crown went on top. “A very grand moon,” he said.",
+        "fil": "“Ano pa ang puwede nating gamitin?” tanong niya. Pinili ni Tala ang “Mga larawan.” Nakakita sila ng card na may asul na langit at card na may dilaw na buwan. Inilagay ni Bituin ang unan sa harap. Ipinatong niya ang koronang papel. “Napakagarang buwan,” sabi niya."
+      },
+      {
+        "scene": "music",
+        "cast": [
+          "tala",
+          "bituin",
+          "kiko"
+        ],
+        "en": "Bituin asked Tala to choose a guest. She chose Kiko. Kiko arrived with his own small cloth. “May I put this here?” he asked. Tala chose “Yes.” Soon the pretend moon had a blanket, a crown, and a turtle sitting beside it.",
+        "fil": "Pinapili ni Bituin si Tala ng bisita. Pinili niya si Kiko. Dumating si Kiko na may dalang sariling maliit na tela. “Puwede ko bang ilagay dito?” tanong niya. Pinili ni Tala ang “Oo.” May kumot at korona na ang kunwaring buwan, at pagong sa tabi nito."
+      },
+      {
+        "scene": "night",
+        "cast": [
+          "tala",
+          "bituin",
+          "kiko"
+        ],
+        "en": "“Does the real moon need pajamas?” asked Kiko. Bituin looked out of the window. A long cloud covered half the moon. “It brought its own,” he said. Tala kept her blue blanket. The party went on without it.",
+        "fil": "“Kailangan ba ng pajama ng totoong buwan?” tanong ni Kiko. Tumingin si Bituin sa bintana. Natatakpan ng mahabang ulap ang kalahati ng buwan. “May dala siyang sarili,” sabi niya. Nasa kay Tala pa rin ang asul niyang kumot. Nagpatuloy ang party kahit wala iyon."
+      }
+    ]
+  }
 ];
 export function storyById(id){return stories.find(s=>s.id===id);}

@@ -202,3 +202,17 @@ AI automatic page timing and manual audio seeking use text-length estimates, not
 AI narration receives only a shipped public story script. No child choices, custom phrases, profiles or journals are sent. Audio requires internet and is excluded from the service-worker cache. On failure the player pauses with an explanation; it never changes narrators automatically. **About this narrator → Use device narration** explicitly changes to a device voice. Device narration pins one voice, pace and pitch for the full story, advances pages after each utterance, and pauses/restarts the current page when resumed. Offline availability depends on installed device voices. Leaving the reader, selecting a communication button, or changing profiles stops story playback; stale speech callbacks cannot restart it.
 
 Whole-book recordings use `GET /api/story-book/<published-story-id>/<en|fil>`. The server holds one recording/promise per public story/language pair (12 total) per process, with two concurrent generations and sticky failures until restart. Each startup prepares the first English book and the caregiver greeting; other books generate on first play. The previous fixed-page endpoint remains for older installed app versions, bounded to 60 page/language combinations. These controls reset per replica/restart and are not durable billing caps: configure OpenAI project usage controls. API charges are separate from ChatGPT. No new environment variables are required.
+
+### Revised story lessons
+The same Tala, Bituin, Kiko and Maya character designs and six saved-story IDs remain. Each five-page book now follows a concrete problem, a choice and a resolution, with the lesson and optional caregiver-assisted activity after the ending. English and Filipino scripts are both included.
+
+| Book | Lesson |
+| --- | --- |
+| The Little Light | Listen before deciding how to help. |
+| Kiko’s Own Pace | Take your time and share the jobs. |
+| Maya’s Quiet Song | Stop when asked, then ask what would help. |
+| The Rainy-Day Parade | Make another plan when things change. |
+| The Missing Mango | Tell the truth and try to make things right. |
+| The Moon’s Pajama Party | Ask before borrowing and respect “no.” |
+
+End activities use story-related picture choices and a short “Try it together” invitation. Looking, using a board, partner assistance or skipping are welcome; there is no score or assessment. Borrowing, sound and picnic activities can use pictures only. Narration contains only the story, not the lesson/activity instructions. Rewritten books retain the continuous single-narrator player and top page controls. Install the latest app update to receive the revised scripts; do not clear site data or remove local records.
