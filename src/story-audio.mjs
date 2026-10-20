@@ -1,0 +1,10 @@
+// Only shipped, public stories enter this adapter. No user-supplied speech input.
+import {storyById} from '../public/stories.js';
+export function publicPage(id,language,index){if(!['en','fil'].includes(language)||!Number.isInteger(index)||index<0)return null;return storyById(id)?.pages[index]?.[language]||null;}
+export async function generateStoryAudio(id,language,index,{apiKey=process.env.OPENAI_API_KEY,fetchImpl=globalThis.fetch}={}){
+ const input=publicPage(id,language,index);if(!input||!apiKey)throw Error('Narration unavailable');
+ let response;try{response=await fetchImpl('https://api.openai.com/v1/audio/speech',{method:'POST',headers:{Authorization:`Bearer ${apiKey}`,'Content-Type':'application/json'},body:JSON.stringify({model:'gpt-4o-mini-tts',voice:'coral',input,instructions:`Read this page exactly as written in ${language==='fil'?'Filipino':'English'}. Be a warm, expressive storyteller for children. Use gentle wonder, playful dialogue and comfortable pauses. Keep words clear and unhurried. No shouting, added words, music or sound effects.`,response_format:'mp3'}),signal:AbortSignal.timeout(25000)});}catch{throw Error('Narration connection unavailable');}
+ if(!response.ok)throw Error(`Narration provider HTTP ${Number(response.status)||0}`);
+ const audio=Buffer.from(await response.arrayBuffer());if(audio.length<16||audio.length>4*1024*1024||!response.headers.get('content-type')?.startsWith('audio/')||!(audio.toString('ascii',0,3)==='ID3'||(audio[0]===255&&(audio[1]&224)===224)))throw Error('Invalid narration audio');return audio;
+}
+export function createStoryAudioStore(configured=false,generate=generateStoryAudio){const cache=new Map();let active=0,attempts=0;return {configured,get(id,language,index){if(!publicPage(id,language,index))return Promise.reject(Error('Unknown public story page'));const key=`${id}/${language}/${index}`;if(cache.has(key))return cache.get(key);if(!configured||active>=2||attempts>=60)return Promise.reject(Error('Narration temporarily unavailable'));active++;attempts++;const pending=Promise.resolve().then(()=>generate(id,language,index)).finally(()=>active--);cache.set(key,pending);return pending;}};}

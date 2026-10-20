@@ -23,8 +23,8 @@ test('voice recommendations allow caregiver override and do not confuse female a
  assert.equal(speechPreferences(profile,{rate:1,adaptiveVoice:false,pitch:.8},[]).pitch,.8);
  assert(speechPreferences(profile,{rate:1},[]).rate<1);const kidVoice={name:'English Girl Child',voiceURI:'kid',lang:'en-US',localService:true};assert.equal(speechPreferences(profile,{rate:1},[...voices,kidVoice]).voice.voiceURI,'kid');assert.equal(speechPreferences(profile,{rate:1},[...voices,kidVoice]).pitch,1);assert.equal(speechPreferences(profile,{rate:1,voice:'m'},[...voices,kidVoice]).voice.voiceURI,'m');assert.equal(speechPreferences(profile,{language:'fil',rate:1},[{voiceURI:'tl',name:'Filipino voice',lang:'tl-PH',localService:true}]).voice.voiceURI,'tl');
 });
-test('three complete bilingual original stories reference local companions',async()=>{
- assert.equal(stories.length,3);assert.equal(companions.length,4);
+test('six complete bilingual original stories reference local companions',async()=>{
+ assert.equal(stories.length,6);assert.equal(companions.length,4);
  for(const story of stories){assert.equal(story.pages.length,5);for(const page of story.pages){assert(page.en&&page.fil);assert((await readFile(`public/art/scene-${page.scene}.svg`,'utf8')).startsWith('<svg'));assert(page.cast.every(id=>companions.some(c=>c.id===id)));assert((page.choices||[]).every(c=>c.length===3&&c.every(Boolean)));}}
  for(const friend of companions){const svg=await readFile(`public/art/${friend.id}.svg`,'utf8');assert(svg.startsWith('<svg'));assert(!/(?:href|src)="https?:|<script/.test(svg));}
 });
