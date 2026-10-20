@@ -1,6 +1,6 @@
-export async function browser(origin='http://127.0.0.1:3010'){
+export async function browser(origin='http://127.0.0.1:3010',targetId){
  const pages=await(await fetch('http://127.0.0.1:9222/json')).json();
- const socket=new WebSocket(pages.find(p=>p.type==='page').webSocketDebuggerUrl);await new Promise(r=>socket.onopen=r);let sequence=0;const pending=new Map(),errors=[];
+ const socket=new WebSocket(pages.find(p=>targetId?p.id===targetId:p.type==='page').webSocketDebuggerUrl);await new Promise(r=>socket.onopen=r);let sequence=0;const pending=new Map(),errors=[];
  socket.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);};
  function call(method,params={}){return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});socket.send(JSON.stringify({id,method,params}));});}
  async function js(expression){const result=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(result.exceptionDetails)throw Error(JSON.stringify(result.exceptionDetails));return result.result.value;}
