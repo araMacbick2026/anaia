@@ -145,3 +145,7 @@ Use a disposable browser profile: the browser test clears this origin's local da
 5. Optional consent-based encrypted sync and expanded games/themes. Assess any advertising network separately; keep live ads disabled until child-directed policies and placement can be enforced.
 
 New connected-world browser suite: start a production server with `PORT=3010 node server.mjs` (PowerShell: `$env:PORT=3010; node server.mjs`), keep the test Chromium running, then run `node tests/world-browser.mjs`. It resets only its disposable localhost:3010 origin, not the deployed app.
+
+### Finding installation on iPad
+
+When ANAIA detects an iPad/iPhone outside standalone mode, a visible **Install ANAIA** link appears in the shared header on all screens, including Communication Corner, and on Home. It opens `#install` with large Safari Share → Add to Home Screen instructions. Safari cannot be forced to install by a website. Supported prompt browsers use the native prompt through the header button. Installation access hides in standalone mode; unsupported desktop browsers do not receive a misleading installation button. Actual iPad installation remains a real-device verification step.

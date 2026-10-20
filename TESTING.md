@@ -51,3 +51,7 @@ Removed Speak, Repeat speech, and Clear message controls. Every communication pi
 ## Explicit stale-version recovery
 
 `tests/update-browser.mjs` reproduced a cache-first old app with another controlled tab kept open, installed the new service worker through `/update.html`, requested activation only after pressing Update, and confirmed the new home screen loaded. Existing IndexedDB settings, birthday/gender profile information, and private journal records were unchanged. The update route and version endpoint are not precached; no site-data clearing is used. Build, syntax, and automated suites passed.
+
+## Visible iPad installation
+
+`tests/install-browser.mjs` passed iPad-style MacIntel/touch detection, Install ANAIA visibility from Communication Corner, navigation to full Safari Share/Add to Home Screen instructions, 360/768/1024px layouts, hiding the header option in standalone mode, and use of the browser prompt when supported. Acceptance reports only an installation request. These are Chromium simulations; actual Safari Home Screen installation still needs a real iPad check. Build, syntax, and automated checks passed.
