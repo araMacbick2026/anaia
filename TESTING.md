@@ -59,3 +59,13 @@ Removed Speak, Repeat speech, and Clear message controls. Every communication pi
 ## Steady touch and child-voice selection
 
 Build, syntax, and automated tests passed, including ages 13/14/18, a child-labeled voice preference, and explicit adult-voice override. `tests/touch-browser.mjs` passed real Chromium emulated touch events at tablet dimensions: dragging from a picture did not pan the page; repeated native taps dispatched speech once each; selected tile/message geometry remained stable; scrolling from gaps still worked; disabling Steady touch persisted through reload. These tests do not establish the touch feel or available voices on a real iPad. No voice cloning or external speech integration was added.
+
+## Character, icon, fixed iPad shell, and everyday activities
+
+- Generated Tala artwork was visually inspected for two distinct legs/shoes supported on the wheelchair footplate. New ANAIA wordmark/star icons were visually reviewed; PNG dimensions and WebP headers are checked automatically. This is visual product QA, not a clinical wheelchair-fitting assessment.
+- Build, syntax, and six automated test files passed. New tests cover navigation destinations, hidden decorative icon semantics, versioned Apple icon dimensions, valid WebP, and English/Filipino everyday-choice labels.
+- `tests/shell-browser.mjs` passed on the production build at 768×1024, 1024×768, 390×844, and 844×390: fixed header and seven visible 64px+ navigation targets, no horizontal overflow, no overlap between bars, Home/Profiles/Settings footer links, keyboard-focused profile input and final AAC tile remain visible, new Tala/manifest/Apple icon references, repeated choice speech, play/story connections, and offline new-image/activity loading. Screenshots were visually reviewed.
+- `tests/touch-browser.mjs` passed after the shell redesign: picture drag suppression, repeated tap speech, stable selection geometry, gap scrolling, and persisted caregiver override.
+- `tests/update-browser.mjs` passed after the new asset bundle: upgrading from an older cache with another tab open preserved saved records.
+- `tests/shell-ad-browser.mjs` passed with the development placeholder enabled: one banner first in Home; none in the header, navigation, footer, communication, play, stories, journal, profiles, settings, companions, account design, or everyday activities.
+- Real iPad Home Screen icon refresh, physical touch comfort, screen-reader use, zoom/text enlargement, and software-keyboard behavior need real-device checks. No therapy efficacy, automatic icon replacement, or standalone installation has been inferred from Chromium simulation.

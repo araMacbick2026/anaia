@@ -47,3 +47,15 @@ Age suggestions slightly change pace/pitch for children (13 and under), teens (1
 ## Deliberate boundaries
 
 No medical inference, emotion detection, engagement scoring, streaks, timed rewards, external AI uploads, or advertising in child-facing screens. Local profiles are not a security boundary: an unlocked shared browser can access its records. Birthdays and gender are optional; collect no full legal name, location, or medical history. Google access, cloud sync, printed templates, full character animation, live ads, and checkout must not be presented as functional until implemented and tested.
+
+## Navigation and character refinement
+
+The sample's useful principle is a stable spatial map: brand at the top, familiar destinations at the bottom. The iPad now has seven large picture-and-word buttons that never disappear while scrolling, with direct Home/Profiles/Settings access repeated in the footer. Small screens reserve space for a two-row bar. This reduces the need to search for a back link or precisely scroll back to a hidden menu. Advertising has no place in this shared shell; its existing top-of-Home-only boundary is preserved.
+
+Tala's original simplified seated pose was ambiguous. The refreshed original generated illustration makes the seat, legs, paired shoes, footplate, large wheel, and front casters visually distinct. It remains a fictional character and does not use a real child's photograph. The new ANAIA wordmark/star icon provides both a word and a familiar shape at Home Screen sizes. Existing iPad icon refresh is controlled by iPadOS and remains a real-device verification task.
+
+### Everyday support, without pretending to replace therapy
+
+Everyday moments now implements three optional entry points: model two meaningful choices and a break; notice colors/shapes without a right-answer test; share a story with no obligation to finish. These are low-pressure interactions built from the existing AAC, play, and story tools. There is no diagnosis, exercise prescription, therapy-progress score, or guarantee of improvement after a missed appointment.
+
+The next useful additions are (1) a paged AAC board for users who cannot comfortably scroll, (2) caregiver-created Now/Next picture routines, (3) safe backup import before any device migration, and (4) printable high-contrast Tala/Kiko/Maya activities aligned with a family's existing professional guidance. Family usability sessions should determine which access mode to build first. These remain future work rather than simulated functionality.

@@ -5,5 +5,5 @@ export const companions = [
  {id:'maya',name:'Maya',role:'The music-loving bird',description:'Maya finds a little song in everyday life. She always checks whether her friends want sound or quiet.',color:'#f4e1da',activity:'play'}
 ];
 export function character(id='tala'){return companions.find(c=>c.id===id)||companions[0];}
-export function companionArt(id='tala', className='', decorative=true){const c=character(id);return `<img class="companion-art ${className}" src="/art/${c.id}.svg" alt="${decorative?'':c.name+', '+c.role}">`;}
+export function companionArt(id='tala', className='', decorative=true){const c=character(id);return `<img class="companion-art ${className}" src="/art/${c.id}${c.id==='tala'?'.webp':'.svg'}" alt="${decorative?'':c.name+', '+c.role}">`;}
 export function symbol(name,className=''){return `<img class="symbol ${className}" src="/art/${name}.svg" alt="">`;}
