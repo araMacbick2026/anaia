@@ -1,7 +1,7 @@
 import {cp,mkdir,readFile,writeFile,rm,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true});await cp('public','dist',{recursive:true});
-const assets=['/','/index.html','/app.js','/navigation.js','/together.js','/profiles.js','/characters.js','/stories.js','/world.js','/boot.js','/data.js','/storage.js','/styles.css','/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png','/icons/maskable-512.png','/icons/apple-touch-icon.png'];
+const assets=['/','/index.html','/app.js','/communication.js','/navigation.js','/together.js','/profiles.js','/characters.js','/stories.js','/world.js','/boot.js','/data.js','/storage.js','/styles.css','/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png','/icons/maskable-512.png','/icons/apple-touch-icon.png'];
 assets.push(...(await readdir('public/art')).filter(name=>/\.(svg|png|webp)$/.test(name)).map(name=>'/art/'+name));
 assets.push(...(await readdir('public/icons')).filter(name=>name.startsWith('anaia-')&&name.endsWith('.png')).map(name=>'/icons/'+name));
 const hash=createHash('sha256');for(const asset of assets)hash.update(await readFile('dist'+(asset==='/'?'/index.html':asset)));

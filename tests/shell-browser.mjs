@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';import {writeFile} from 'node:fs/promises';import {browser} from './cdp.mjs';
 const b=await browser('http://127.0.0.1:3015');
 try{
- await b.call('Storage.clearDataForOrigin',{origin:b.origin,storageTypes:'all'});await b.call('Page.navigate',{url:b.origin+'/'});await b.until(`document.querySelector('main').dataset.ready==='true'`);await b.until(`!!navigator.serviceWorker.controller`);
+ await b.call('Page.navigate',{url:'about:blank'});await b.delay(100);await b.call('Storage.clearDataForOrigin',{origin:b.origin,storageTypes:'all'});await b.call('Page.navigate',{url:b.origin+'/'});await b.until(`document.querySelector('main').dataset.ready==='true'`);await b.until(`!!navigator.serviceWorker.controller`);
  const routes=['#home','#communication','#play','#stories','#journal','#profiles','#settings','#together'];
  for(const [width,height] of [[768,1024],[1024,768],[390,844],[844,390]]){
   await b.call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:true});await b.delay(120);
