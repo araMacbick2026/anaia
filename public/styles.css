@@ -72,3 +72,13 @@ header{padding-top:max(24px,env(safe-area-inset-top))}
 @media(prefers-reduced-motion:reduce){.learning-object{animation:none!important}}
 
 .learning-symbol{width:76px;height:76px;object-fit:contain;vertical-align:middle}.napkin-group{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}.napkin-group .learning-symbol{width:42px;height:56px}.learning-object .learning-symbol{width:90px;height:90px}
+
+.aac-modes{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.aac-modes button[aria-pressed=true],.aac-pages button[aria-pressed=true]{background:#235d59;color:#fff}
+.aac-safety{position:sticky;top:calc(var(--app-header-height,100px) + var(--app-update-height,0px));z-index:3;display:flex;gap:10px;padding:10px 0;background:#f8f6f0;flex-wrap:wrap}
+.aac-safety button{flex:1;min-width:100px}.aac-composer{border:1px solid #cad8cc;border-radius:18px;padding:18px;margin:14px 0}.aac-composer .message{font-size:clamp(25px,3vw,36px);min-height:80px;overflow-wrap:anywhere;margin:14px 0}.aac-message-controls{gap:12px}
+.aac-pages{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 12px}.aac-pages button{flex:1;min-width:145px}
+.core-grid{display:grid;grid-template-columns:repeat(var(--columns,3),minmax(0,1fr));gap:var(--gap,16px)}.core-tile{min-width:0;min-height:var(--tile-size,140px);padding:16px 10px;overflow-wrap:anywhere;animation:none!important;transform:none!important;touch-action:manipulation}.core-tile .picture{font-size:46px;display:block}.aac-photo{width:80px;height:80px;object-fit:contain;max-width:100%}.aac-repair{margin:24px 0}.aac-repair button{flex:1}#aac-status{max-width:none}#aac-status:focus{outline:3px solid #b47a28;outline-offset:3px}
+.steady-touch .core-tile{touch-action:pinch-zoom}
+@media(max-width:700px){.core-grid{grid-template-columns:repeat(min(2,var(--columns,3)),minmax(0,1fr))}.aac-modes button{flex:1;min-width:130px}.aac-composer{padding:14px}.aac-safety button{padding:10px 7px;font-size:15px}.aac-pages button{min-width:130px}.aac-message-controls button{flex:1;min-width:120px}}
+
+html.aac-active{scroll-padding-top:calc(var(--app-header-height) + var(--app-update-height,0px) + 112px)}
