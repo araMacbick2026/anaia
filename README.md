@@ -23,7 +23,7 @@ The source ZIP is a download, not a hosted website or interactive chat preview. 
 
 The page includes an initial welcome screen and recovery instructions if application JavaScript fails. Local-storage initialization is bounded: if it cannot load, starter communication remains available and writes/deletion are blocked to protect existing records. Reload to retry storage access. Do not clear site data as a first troubleshooting step because it contains local journal/photos.
 
-If a previously installed PWA still shows an older version, close all its tabs/windows and reopen it online, allowing the updated worker to activate. Chat text and source-file links do not host the interactive app; use the local server or a deployed HTTPS Railway domain.
+If the PWA shows an older version, open `/update.html` online and press **Update ANAIA now**. Finish unsaved edits in other tabs first. This explicitly activates the newest worker without clearing IndexedDB. Reload other open tabs afterward. Caregiver settings includes the same update link. The updater and version endpoint are intentionally not precached. Chat text and source-file links do not host the interactive app; use the local server or a deployed HTTPS Railway domain.
 
 ## What works
 

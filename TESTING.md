@@ -47,3 +47,7 @@ Removed Speak, Repeat speech, and Clear message controls. Every communication pi
 - Existing core browser flow, home-only enabled ad-placeholder suite, and startup/storage-failure suites were rerun and passed after the new build. No private profile/journal data is sent to a server or cached in the service-worker cache.
 - Speech tests inspect dispatched utterance text, selected voice, rate, and pitch. They do not establish audible voice gender/age, voice quality, availability on a real device, or physical assistive-device usability. Real-device installation and manual screen-reader review remain necessary.
 - Local profiles are not authenticated accounts. Google sign-in, cloud sync, downloadable activity templates, full character animation, checkout, and live ads remain unimplemented. These are explicitly described as future work in the app and PRODUCT.md.
+
+## Explicit stale-version recovery
+
+`tests/update-browser.mjs` reproduced a cache-first old app with another controlled tab kept open, installed the new service worker through `/update.html`, requested activation only after pressing Update, and confirmed the new home screen loaded. Existing IndexedDB settings, birthday/gender profile information, and private journal records were unchanged. The update route and version endpoint are not precached; no site-data clearing is used. Build, syntax, and automated suites passed.
