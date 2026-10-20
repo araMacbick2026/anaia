@@ -1,15 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
-  <!-- ANAIA character master: flat three-quarter seated pose. Both legs rest on the footplate. -->
+  <!-- ANAIA character master: flat front-facing seated pose. Both legs rest on the footplate. -->
   <g stroke="#294a48" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
     <ellipse cx="164" cy="293" rx="111" ry="10" fill="#294a48" opacity=".08" stroke="none"/>
-    <!-- Chair back, frame and far wheel, behind the seated figure. -->
-    <path d="M210 169v58h-76" fill="none" stroke="#608b83" stroke-width="12"/>
-    <circle cx="193" cy="245" r="44" fill="#d7ebe3"/>
-    <circle cx="193" cy="245" r="33" fill="none" stroke="#86afa2" stroke-width="4"/>
-    <circle cx="193" cy="245" r="5" fill="#608b83" stroke="none"/>
-    <path d="m193 245-43-24-33 48m33-48h-29" fill="none" stroke="#608b83" stroke-width="7"/>
-    <path d="M119 265v12" fill="none"/>
-    <circle cx="119" cy="282" r="9" fill="#608b83"/>
+    <!-- Two matching main wheels flank the seat; both meet the same ground line. -->
+    <path d="M113 169v58h98v-58" fill="none" stroke="#608b83" stroke-width="12"/>
+    <g id="wheel-left">
+      <circle cx="110" cy="245" r="44" fill="#d7ebe3"/>
+      <circle cx="110" cy="245" r="33" fill="none" stroke="#86afa2" stroke-width="4"/>
+      <circle cx="110" cy="245" r="5" fill="#608b83" stroke="none"/>
+    </g>
+    <g id="wheel-right">
+      <circle cx="214" cy="245" r="44" fill="#d7ebe3"/>
+      <circle cx="214" cy="245" r="33" fill="none" stroke="#86afa2" stroke-width="4"/>
+      <circle cx="214" cy="245" r="5" fill="#608b83" stroke="none"/>
+    </g>
+    <path d="M110 245h104M132 221l-13 53m73-53 13 53" fill="none" stroke="#608b83" stroke-width="7"/>
     <!-- Two knees, two lower legs and two matching shoes; never attached to a wheel. -->
     <path d="M146 211h31v18h-31z" fill="#498e83"/>
     <path d="M146 231v29m20-29v29" fill="none" stroke="#ddb18c" stroke-width="14"/>
