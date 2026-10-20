@@ -36,3 +36,11 @@ header{padding-top:max(24px,env(safe-area-inset-top))}
 @media(max-height:650px){.book-toolbar{position:relative;top:auto}}
 /* System update status reserves space and never covers communication controls. */
 :root{--app-update-height:0px}body{padding-top:calc(var(--app-header-height) + var(--app-update-height))}html{scroll-padding-top:calc(var(--app-header-height) + var(--app-update-height) + 20px)}.app-update-status{position:fixed;top:var(--app-header-height);left:0;right:0;z-index:45;padding:12px max(24px,env(safe-area-inset-right)) 12px max(24px,env(safe-area-inset-left));background:#e7efe5;color:#214d43;border-bottom:1px solid #b5cabb;font-size:15px;line-height:1.5;overflow-wrap:anywhere}.app-update-status[hidden]{display:none}.app-update-status[data-state=applying]{background:#f4ecd5}.app-update-status[data-state=error]{background:#f3e7da}.book-toolbar{top:calc(var(--app-header-height) + var(--app-update-height))}@media(max-width:700px),(max-height:650px){.book-toolbar{top:auto}}@media(max-width:400px){.app-update-status{font-size:14px;padding:10px 16px}}
+
+/* Bottom-align the artwork itself, so wheelchair wheels rest on the garden path. */
+.storybook .scene-cast{inset:auto 3% 3%;align-items:flex-end;gap:0}
+.storybook .scene-cast img,.storybook .scene-cast:has(img:nth-child(3)) img{height:auto;width:48%;object-position:center bottom;animation:none}
+.storybook .scene-cast:has(img:nth-child(3)) img{width:32%}
+.storybook .scene-bench .scene-backdrop{object-fit:fill}
+.storybook .scene-bench .scene-cast{justify-content:flex-start}
+.storybook .scene-bench .story-character-tala{order:-1}
