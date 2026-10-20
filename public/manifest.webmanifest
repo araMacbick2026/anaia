@@ -11,19 +11,19 @@
   "lang": "en",
   "icons": [
     {
-      "src": "/icons/anaia-v2-192.png",
+      "src": "/icons/anaia-v3-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/anaia-v2-512.png",
+      "src": "/icons/anaia-v3-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/anaia-maskable-v2-512.png",
+      "src": "/icons/anaia-maskable-v3-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
