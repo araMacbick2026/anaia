@@ -11,6 +11,7 @@ ENV NODE_ENV=production
 COPY --from=build /app/dist ./dist
 COPY package.json server.mjs ./
 COPY src/entitlements.mjs ./src/entitlements.mjs
+COPY public/payment-links.js ./public/payment-links.js
 RUN chmod -R a+rX /app
 USER node
 EXPOSE 3000

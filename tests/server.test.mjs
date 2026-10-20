@@ -15,3 +15,5 @@ test('static containment accepts Windows and POSIX paths and rejects escapes',as
  }
  assert.equal(isWithinRoot('C:\\anaia\\dist','D:\\private.txt',win32),false);
 });
+
+ test('donation configuration exposes only validated public provider links',async()=>{process.env.DONATION_GCASH_URL='https://gcash.com.evil.test/pay';process.env.DONATION_USD_URL='https://paypal.me/anaia-test-fixture';let config=JSON.parse((await request('/config.json')).body);assert.equal(config.donationGcashUrl,'');assert.equal(config.donationUsdUrl,'https://paypal.me/anaia-test-fixture');process.env.DONATION_GCASH_URL='https://pay.gcash.com/anaia-test-fixture';config=JSON.parse((await request('/config.json')).body);assert.equal(config.donationGcashUrl,process.env.DONATION_GCASH_URL);assert.equal((await request('/config.json')).headers['Cache-Control'],'no-store');delete process.env.DONATION_GCASH_URL;delete process.env.DONATION_USD_URL;});

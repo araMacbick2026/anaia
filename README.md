@@ -95,11 +95,24 @@ Browser storage may be evicted or cleared. Private browsing is temporary. Changi
 
 Before any live network is added, review its child-directed eligibility, COPPA where applicable, Philippine Data Privacy Act, relevant local/territorial consent rules, platform policies, and data practices with qualified advice. Obtain any required parental consent. Never send child selections, photos, journal content, medical information, or device identifiers derived from these records to an ad service. A provider that cannot reliably enforce the home-only placement and privacy requirements must not be enabled. Enabling a live provider is a separate reviewed integration, not a supported environment-variable switch in this MVP.
 
-## ₱499 PHP premium architecture
+## Current free plan and voluntary donations
 
-Premium is planned at **₱499 PHP paid once**, not a subscription. Pricing lives in a separate caregiver screen. All current features remain free; there are no child-facing upgrade prompts or paywalls. No checkout is implemented and no money can be collected.
+All current features are free. The previous ₱499 upgrade and restore controls have been removed from the interface. Caregiver Settings links to **Free plan & optional donation**; no donation prompts appear on child-facing pages. Donations do not change access or grant an entitlement.
 
-`src/entitlements.mjs` implements a fail-closed verification boundary for server-signed Ed25519 receipts. A claim must have the expected issuer/audience, paid status, product, PHP 49,900 minor units, transaction identifier, subject, and valid time window. The server never reads premium status from localStorage, IndexedDB, URL flags, or an unverified frontend setting. `/api/entitlement` is uncached and returns unavailable by default. The current UI's restore/check control accurately reports that configuration is incomplete; it is not a working purchase recovery service.
+Optional Railway variables:
+
+- `DONATION_GCASH_URL`: the owner’s verified HTTPS public GCash payment link (`gcash.com` or `mynt.xyz`, including subdomains). PHP only.
+- `DONATION_USD_URL`: a separate owner-provided HTTPS USD payment link on PayPal/PayPal.me or Stripe Payment Links. Configure the destination to accept a donor-chosen amount in USD.
+
+Unset variables leave donation buttons disabled with an accurate explanation. Both server and browser validate provider URLs; credentials, HTTP links, other domains and custom ports are rejected. These are public recipient links, never secret API credentials. Do not use an example/test recipient in production. If the owner only has a personal GCash QR, it still needs to be supplied and a QR-specific transfer flow implemented; no QR or account number is invented.
+
+The currency initially follows the browser’s locale region (PH → PHP, otherwise USD) and remains manually selectable. This is a suggestion, not geolocation. Amounts are validated locally with two decimal places. The review step displays the chosen amount, but a general payment link cannot prefill or verify it: donors enter and verify the amount and recipient with the provider. There is no conversion of USD to PHP, no automatic debit, transaction verification, donation history or receipt issuance. The app never displays a payment-success claim. Network/offline failures leave the app free. Payment destinations and responses are not cached by the service worker; selected amounts are not stored in child profiles or sent to ANAIA. Test a real owner-controlled link on the intended phone before enabling it publicly.
+
+## Deferred premium architecture (inactive)
+
+Premium is planned at **₱499 PHP paid once**, not a subscription. This earlier premium proposal is inactive; there is no current premium pricing screen. All current features remain free; there are no child-facing upgrade prompts or paywalls. No premium checkout is implemented. Voluntary donations use a separate external-provider link only when configured.
+
+`src/entitlements.mjs` implements a fail-closed verification boundary for server-signed Ed25519 receipts. A claim must have the expected issuer/audience, paid status, product, PHP 49,900 minor units, transaction identifier, subject, and valid time window. The server never reads premium status from localStorage, IndexedDB, URL flags, or an unverified frontend setting. `/api/entitlement` is uncached and returns unavailable by default. The verifier remains unused by the free interface and is not a working purchase recovery service.
 
 To finish purchases safely:
 
