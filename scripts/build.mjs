@@ -1,7 +1,7 @@
 import {cp,mkdir,readFile,writeFile,rm,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true});await cp('public','dist',{recursive:true});
-const assets=['/','/index.html','/app.js','/auto-update.js','/story-player.js','/activities.js','/ai-preview.js','/updates.js','/payment-links.js','/donations.js','/communication.js','/navigation.js','/together.js','/profiles.js','/characters.js','/stories.js','/world.js','/boot.js','/data.js','/storage.js','/styles.css','/manifest.webmanifest'];
+const assets=['/','/index.html','/app.js','/auto-update.js','/story-player.js','/activities.js','/learning-games.js','/ai-preview.js','/updates.js','/payment-links.js','/donations.js','/communication.js','/navigation.js','/together.js','/profiles.js','/characters.js','/stories.js','/world.js','/boot.js','/data.js','/storage.js','/styles.css','/manifest.webmanifest'];
 assets.push(...(await readdir('public/art')).filter(name=>/\.(svg|png|webp)$/.test(name)).map(name=>'/art/'+name));
 const manifest=JSON.parse(await readFile('public/manifest.webmanifest','utf8'));
 const html=await readFile('public/index.html','utf8');const apple=html.match(/rel="apple-touch-icon" href="([^"]+)"/)?.[1];
