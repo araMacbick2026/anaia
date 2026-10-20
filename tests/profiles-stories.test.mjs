@@ -4,7 +4,8 @@ import {stories} from '../public/stories.js';import {companions} from '../public
 const profile={nickname:'Star',birthday:'',ageBand:'child',sex:'female',companion:'tala',voiceStyle:'suggested'};
 test('optional birthdays, valid calendar dates, and exact age transitions',()=>{
  const now=new Date(2026,9,20,9,0);
- assert.equal(ageBand({...profile,birthday:'2013-10-20'},now),'teen');
+ assert.equal(ageBand({...profile,birthday:'2013-10-20'},now),'child');
+ assert.equal(ageBand({...profile,birthday:'2012-10-20'},now),'teen');
  assert.equal(ageBand({...profile,birthday:'2013-10-21'},now),'child');
  assert.equal(ageBand({...profile,birthday:'2008-10-20'},now),'adult');
  assert.equal(ageBand({...profile,birthday:'2026-10-20',ageBand:'adult'},now),'child');
@@ -20,7 +21,7 @@ test('voice recommendations allow caregiver override and do not confuse female a
  assert.equal(speechPreferences({...profile,sex:'male'},{language:'en',voice:'f',rate:1},voices).voice.voiceURI,'f');
  assert.equal(speechPreferences({...profile,ageBand:'adult'},{rate:1},[]).pitch,1);
  assert.equal(speechPreferences(profile,{rate:1,adaptiveVoice:false,pitch:.8},[]).pitch,.8);
- assert(speechPreferences(profile,{rate:1},[]).rate<1);assert.equal(speechPreferences(profile,{language:'fil',rate:1},[{voiceURI:'tl',name:'Filipino voice',lang:'tl-PH',localService:true}]).voice.voiceURI,'tl');
+ assert(speechPreferences(profile,{rate:1},[]).rate<1);const kidVoice={name:'English Girl Child',voiceURI:'kid',lang:'en-US',localService:true};assert.equal(speechPreferences(profile,{rate:1},[...voices,kidVoice]).voice.voiceURI,'kid');assert.equal(speechPreferences(profile,{rate:1},[...voices,kidVoice]).pitch,1);assert.equal(speechPreferences(profile,{rate:1,voice:'m'},[...voices,kidVoice]).voice.voiceURI,'m');assert.equal(speechPreferences(profile,{language:'fil',rate:1},[{voiceURI:'tl',name:'Filipino voice',lang:'tl-PH',localService:true}]).voice.voiceURI,'tl');
 });
 test('three complete bilingual original stories reference local companions',async()=>{
  assert.equal(stories.length,3);assert.equal(companions.length,4);

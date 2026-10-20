@@ -31,7 +31,7 @@ The reader never auto-advances, auto-plays audio, awards speed points, or infers
 
 ## Voice design and limits
 
-Age suggestions slightly change pace/pitch for children, teens, and adults. A birthday is unnecessary: a chosen age band is enough. Optional gender can suggest a device voice by its human-readable name; browsers expose no portable age/gender metadata. This is a best-effort match, not an authentic age/identity voice. Any saved explicit voice takes priority, and manual pace/pitch can override age suggestions. No child voice cloning or voice sample upload is used. A device-installed voice is preferred when compatible. Some languages and voices need internet; missing voices fall back to an available voice or visible text.
+Age suggestions slightly change pace/pitch for children (13 and under), teens (14–17), and adults. Child-labeled device voices are preferred if available; most iPads cannot be assumed to supply one. A birthday is unnecessary: a chosen age band is enough. Optional gender can suggest a device voice by its human-readable name; browsers expose no portable age/gender metadata. This is a best-effort match, not an authentic age/identity voice. Any saved explicit voice takes priority, and manual pace/pitch can override age suggestions. No child voice cloning or voice sample upload is used. A device-installed voice is preferred when compatible. Some languages and voices need internet; missing voices fall back to an available voice or visible text.
 
 ## Next improvements, in order of value
 

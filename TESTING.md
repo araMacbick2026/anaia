@@ -55,3 +55,7 @@ Removed Speak, Repeat speech, and Clear message controls. Every communication pi
 ## Visible iPad installation
 
 `tests/install-browser.mjs` passed iPad-style MacIntel/touch detection, Install ANAIA visibility from Communication Corner, navigation to full Safari Share/Add to Home Screen instructions, 360/768/1024px layouts, hiding the header option in standalone mode, and use of the browser prompt when supported. Acceptance reports only an installation request. These are Chromium simulations; actual Safari Home Screen installation still needs a real iPad check. Build, syntax, and automated checks passed.
+
+## Steady touch and child-voice selection
+
+Build, syntax, and automated tests passed, including ages 13/14/18, a child-labeled voice preference, and explicit adult-voice override. `tests/touch-browser.mjs` passed real Chromium emulated touch events at tablet dimensions: dragging from a picture did not pan the page; repeated native taps dispatched speech once each; selected tile/message geometry remained stable; scrolling from gaps still worked; disabling Steady touch persisted through reload. These tests do not establish the touch feel or available voices on a real iPad. No voice cloning or external speech integration was added.

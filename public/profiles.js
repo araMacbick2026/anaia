@@ -5,7 +5,7 @@ export function ageBand(profile, now = new Date()) {
   if (!Number.isFinite(birth.getTime()) || profile.birthday > localDate(now)) return profile.ageBand || 'child';
   let age = now.getFullYear() - birth.getFullYear();
   if (now.getMonth() < birth.getMonth() || (now.getMonth() === birth.getMonth() && now.getDate() < birth.getDate())) age--;
-  return age < 13 ? 'child' : age < 18 ? 'teen' : 'adult';
+  return age <= 13 ? 'child' : age < 18 ? 'teen' : 'adult';
 }
 export function validateProfile(input, now = new Date()) {
   const nickname = String(input.nickname || '').trim();
@@ -28,9 +28,10 @@ export function speechPreferences(profile, settings, voices) {
   let style = profile?.voiceStyle || 'any';
   if (style === 'suggested') style = profile.sex === 'female' ? 'feminine' : profile.sex === 'male' ? 'masculine' : 'any';
   const local = voices.filter(v => (settings.language==='fil'?/^(fil|tl)(-|$)/i.test(v.lang||''):v.lang?.toLowerCase().startsWith('en')));
-  const pattern = style === 'feminine' ? /\b(female|woman|feminine|samantha|zira|victoria|karen|moira|susan)\b/i : style === 'masculine' ? /\b(male|man|masculine|david|daniel|alex|george|mark)\b/i : null;
+  const pattern = style === 'feminine' ? /\b(female|woman|feminine|girl|samantha|zira|victoria|karen|moira|susan)\b/i : style === 'masculine' ? /\b(male|man|masculine|boy|david|daniel|alex|george|mark)\b/i : null;
   const compatible = pattern ? local.filter(v => pattern.test(v.name)) : local;
-  const voice = explicit || compatible.find(v => v.localService) || compatible[0] || local.find(v => v.localService) || local[0];
+  const childVoices=band==='child'?compatible.filter(v=>/\b(child|children|kid|boy|girl)\b/i.test(v.name)):[];
+  const voice = explicit || childVoices.find(v=>v.localService) || compatible.find(v => v.localService) || local.find(v => v.localService) || childVoices[0] || compatible[0] || local[0];
   const adaptive = settings.adaptiveVoice !== false;
-  return {voice,lang,pitch:adaptive ? ({child:1.12,teen:1.04,adult:1}[band]) : Math.max(.7,Math.min(1.4,Number(settings.pitch)||1)),rate:Math.max(.5,Math.min(1.5,(Number(settings.rate)||1) * (adaptive && band === 'child' ? .92 : 1)))};
+  return {voice,lang,pitch:adaptive ? ((band==='child'&&voice&&/\b(child|children|kid|boy|girl)\b/i.test(voice.name)?1:{child:1.12,teen:1.04,adult:1}[band])) : Math.max(.7,Math.min(1.4,Number(settings.pitch)||1)),rate:Math.max(.5,Math.min(1.5,(Number(settings.rate)||1) * (adaptive && band === 'child' ? .92 : 1)))};
 }
